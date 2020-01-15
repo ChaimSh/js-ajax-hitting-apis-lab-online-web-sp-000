@@ -35,7 +35,7 @@ function displayRepositories() {
 
 function getCommits(element) {
   const repoName = element.dataset.repository;
-  const uri = 
+  const uri =
   rootURL + '/repos/' + element.dataset.username + '/' + repoName + '/commits';
   const xhr = new XMLHttpRequest();
   xhr.addEventListener('load', displayCommits);
@@ -47,10 +47,10 @@ function displayCommits(){
   const commits = JSON.parse(this.responseText)
   const commitsList = `<ul>${commits
   .map(
-    commit=> '<li><h3>' + 
+    commit=> '<li><h3>' +
     commit.commit.author.name +
     ' (' +
-    commit.author.login + 
+    commit.author.login +
     ')<h3>' +
     commit.commit.message +
     '</li>'
@@ -61,7 +61,7 @@ document.getElementById('details').innerHTML = commitsList;
 
 function getBranches(element){
   const repo element.datatset.repository
-  const uri = 
+  const uri =
   rootURL + '/repos/' + element.datatset.username + '/' + repoName + '/branches';
   const xhr = new XMLHttpRequest();
   xhr.addEventListener('load', displayBranches);
